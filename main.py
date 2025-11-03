@@ -13,6 +13,7 @@ import json
 from pathlib import Path
 import tempfile
 import os
+from dotenv import load_dotenv
 
 # Document processing libraries
 import PyPDF2
@@ -37,6 +38,9 @@ app.add_middleware(
 
 # Initialize Groq client (Free API)
 # Get your free API key from: https://console.groq.com
+
+
+load_dotenv()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 client = Groq(api_key=GROQ_API_KEY)
 
